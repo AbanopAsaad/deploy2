@@ -34,11 +34,11 @@ function Chat() {
       }
     }
     //Connect to the WebSocket server with the username as a query parameter
-    const newSocket = new WebSocket("ws://127.0.0.1:8000/ws/chat/");
+    // const newSocket = new WebSocket("ws://127.0.0.1:8000/ws/chat/");
     // const newSocket = new WebSocket("ws:https://bomba3.pythonanywhere.com/ws/chat/");
     
     //  const newSocket = new WebSocket("ws:https://bomba3.pythonanywhere.com/ws/chat/");
-    //  const newSocket = new WebSocket("wss:bomba3.pythonanywhere.com/ws/chat/");   
+     const newSocket = new WebSocket("wss:abanop.pythonanywhere.com/ws/chat/");   
     setSocket(newSocket);
 
 
@@ -81,8 +81,8 @@ function Chat() {
 
   const fetchChatHistory = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:8000/chat-api/messages/");
-      // const response = await axios.get("https://bomba3.pythonanywhere.com/api/messages/");
+      // const response = await axios.get("http://127.0.0.1:8000/chat-api/messages/");
+      const response = await axios.get("https://abanop.pythonanywhere.com/chat-api/messages/");
       setMessages(
         response.data.map((message) => ({
           content: message.content,
