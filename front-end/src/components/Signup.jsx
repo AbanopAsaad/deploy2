@@ -42,7 +42,8 @@ export function SignupPage() {
     } else if (password === confirmPassword && regex.test(password)) {
       setNotMatchErr(false);
       setWrongPass(false);
-      axios.post(`${BASE_URL}/api/register/`, {
+      axios
+        .post('https://abanop.pythonanywhere.com/api/register/', {
           firstname: fname,
           lastname: lname,
           username: username,
