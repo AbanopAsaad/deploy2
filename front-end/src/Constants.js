@@ -1,2 +1,2 @@
-export const BASE_URL = 'https://abanop.pythonanywhere.com/';
+export const BASE_URL = 'https://abanop.pythonanywhere.com';
 
