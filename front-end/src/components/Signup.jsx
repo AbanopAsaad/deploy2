@@ -2,6 +2,7 @@ import React from 'react';
 import axios, { Axios } from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../Constants'
 let fname, lname, username, email, password, confirmPassword, gender;
 
 export function SignupPage() {
@@ -41,8 +42,7 @@ export function SignupPage() {
     } else if (password === confirmPassword && regex.test(password)) {
       setNotMatchErr(false);
       setWrongPass(false);
-      axios
-        .post('http://127.0.0.1:8000/api/register/', {
+      axios.post(`${BASE_URL}/api/register/`, {
           firstname: fname,
           lastname: lname,
           username: username,
